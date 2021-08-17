@@ -54,15 +54,13 @@ class DhlApiHandler
         $this->username = $username;
         $this->password = $password;
         $this->token = $token;
-
-        $this->login();
     }
 
     /**
      * Login to dhl api
      * @return void
      */
-    private function login(): void
+    public function login(): void
     {
         $input = new stdClass();
         $input->Auth = $this->createAuth();
@@ -70,20 +68,6 @@ class DhlApiHandler
         if(isset($result->LoginResult, $result->LoginResult->AuthToken)) {
             $this->authToken = $result->LoginResult->AuthToken;
         }
-    }
-
-    /**
-     * Login to dhl api
-     */
-    public function testLogin()
-    {
-        if($this->token) {
-            $input = new stdClass();
-            $input->Auth = $this->createAuth();
-            return $this->client->Login($input);
-        }
-
-        return false;
     }
 
     /**
