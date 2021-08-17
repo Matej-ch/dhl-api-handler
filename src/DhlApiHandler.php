@@ -241,7 +241,7 @@ class DhlApiHandler
                 'code' => $response->CreateOrdersResult->ResultData->ItemResult->Code];
         }
 
-        return ['success' => true, 'message' => $this->getFunctionReturnTypes()[0]];
+        return ['success' => true, 'message' => self::getFunctionReturnTypes()[0]];
     }
 
     /**
@@ -381,7 +381,7 @@ class DhlApiHandler
     {
         $flags = new stdClass();
         $flags->MyApiFlag = new stdClass();
-        $flags->MyApiFlag->Code = $this->getFlags()['SD']['code'];
+        $flags->MyApiFlag->Code = self::getFlags()['SD']['code'];
         $flags->MyApiFlag->Value = true;
         return $flags;
     }
@@ -395,82 +395,82 @@ class DhlApiHandler
         return $packagesExtNums;
     }
 
-    public function getCountries(): array
+    public static function getCountries(): array
     {
         return (new Country())->getList();
     }
 
-    public function getPackProductType(): array
+    public static function getPackProductType(): array
     {
         return (new Products())->getProductTypes();
     }
 
-    public function getFlags(): array
+    public static function getFlags(): array
     {
         return (new Flags())->getFlags();
     }
 
-    public function getDirections(): array
+    public static function getDirections(): array
     {
         return (new Directions())->getDirections();
     }
 
-    public function getStatusTypes(): array
+    public static function getStatusTypes(): array
     {
         return (new DeliveryStatus())->getStatuses();
     }
 
-    public function getDepoTypes(): array
+    public static function getDepoTypes(): array
     {
         return (new Depo())->getDepos();
     }
 
-    public function getExternNumbers(): array
+    public static function getExternNumbers(): array
     {
         return (new ExternalCodes())->getExernalNumbers();
     }
 
-    public function getDialServices(): array
+    public static function getDialServices(): array
     {
         return (new DialService())->getServices();
     }
 
-    public function getCurrency(): array
+    public static function getCurrency(): array
     {
         return (new Currency())->getCurrencies();
     }
 
-    public function getBanks(): array
+    public static function getBanks(): array
     {
         return (new Bank())->getBanks();
     }
 
-    public function getSwiftCodes(): array
+    public static function getSwiftCodes(): array
     {
         return (new Swift())->getBanks();
     }
 
-    public function getDays(): array
+    public static function getDays(): array
     {
         return (new Day())->getDays();
     }
 
-    public function getFunctionReturnTypes(): array
+    public static function getFunctionReturnTypes(): array
     {
         return (new ErrorMessage())->getMessages();
     }
 
-    public function getPackProductTypeWithCod(): array
+    public static function getPackProductTypeWithCod(): array
     {
         return (new Products())->getProductTypesWithCod();
     }
 
-    public function getForGetPackages(): array
+    public static function getForGetPackages(): array
     {
         return (new Cod())->getMessages();
     }
 
-    public function getAllowedCurrencies(): array
+    public static function getAllowedCurrencies(): array
     {
         return  (new Currency())->getAllowedCurrencies();
     }
