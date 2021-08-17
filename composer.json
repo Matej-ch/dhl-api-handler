@@ -2,7 +2,7 @@
     "name": "matejch/dhl-api-handler",
     "description": "Dhl api supported functions",
     "type": "library",
-    "keywords": ["dhl","api"],
+    "keywords": ["dhl","api","soap"],
     "license": "MIT",
     "authors": [
         {
@@ -11,6 +11,7 @@
         }
     ],
     "require": {
+        "php": ">=7.2.0"
     },
     "autoload": {
         "psr-4": {

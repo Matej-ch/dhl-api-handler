@@ -1,6 +1,15 @@
+
+### this library is deprecated
+
 Dhl api
 =======
-Dhl api supported functions
+This code for connectint to DHL api was used for multitude of years in our app
+
+However, when DHL left slovakian market, they disabled api endpoints
+
+I'm uploading this to separate repo in case it's needed in future
+
+It's using SOAP
 
 Installation
 ------------
@@ -20,12 +29,3 @@ or add
 ```
 
 to the require section of your `composer.json` file.
-
-
-Usage
------
-
-Once the extension is installed, simply use it in your code by  :
-
-```php
-<?= \matejch\dhlApiHandler\AutoloadExample::widget(); ?>```
