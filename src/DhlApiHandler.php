@@ -56,4 +56,82 @@ class DhlApiHandler
         $this->token = $token;
     }
 
+    /**
+     * Login to dhl api
+     * @return void
+     */
+    private function login()
+    {
+        $input = new stdClass();
+        $input->Auth = $this->createAuth();
+        $result = $this->client->Login($input);
+        if(isset($result->LoginResult, $result->LoginResult->AuthToken)) {
+            $this->auth_token = $result->LoginResult->AuthToken;
+        }
+    }
+
+    public function getCountries()
+    {
+        return (new Country())->getList();
+    }
+    public function getPackProductType()
+    {
+        return self::$productType;
+    }
+    public function getFlags()
+    {
+        return self::$flags;
+    }
+    public function getDirections()
+    {
+        return self::$directions;
+    }
+    public function getStatusTypes()
+    {
+        return self::$statusType;
+    }
+    public function getDepoTypes()
+    {
+        return self::$depoType;
+    }
+    public function getExternNumbers()
+    {
+        return self::$externNumbers;
+    }
+    public function getDialServices(){
+        return self::$dialServices;
+    }
+    public function getCurrency()
+    {
+        return self::$currency;
+    }
+    public function getBanks()
+    {
+        return self::$banks;
+    }
+    public function getSwiftCodes()
+    {
+        return self::$swiftcodes;
+    }
+    public function getDays()
+    {
+        return self::$days;
+    }
+    public function getFunctionReturnTypes()
+    {
+        return self::$functionReturnValues;
+    }
+    public function getPackProductTypeWithCod()
+    {
+        return self::$productTypeWithCod;
+    }
+    public function getForGetPackages()
+    {
+        return self::$forGetpackages;
+    }
+    public function getAllowedCurrencies()
+    {
+        return self::$allowedCurrencies;
+    }
+
 }
