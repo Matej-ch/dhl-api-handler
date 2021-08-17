@@ -1,22 +1,27 @@
 {
-    "name": "matejch/dhl-api-handler",
-    "description": "Dhl api supported functions",
-    "type": "library",
-    "keywords": ["dhl","api","soap","slovakia only"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Matej Ch",
-            "email": "matejCH.work@gmail.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {
-        "php": ">=7.2.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "matejch\\dhlApiHandler\\": "src/"
-        }
+  "name": "matejch/dhl-api-handler",
+  "description": "Dhl api supported functions",
+  "type": "library",
+  "keywords": [
+    "dhl",
+    "api",
+    "soap",
+    "slovakia only"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matej Ch",
+      "email": "matejCH.work@gmail.com"
     }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "matejch\\dhlApiHandler\\": "src/"
+    }
+  }
 }
